@@ -1,7 +1,22 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+open class Veiculo(val modelo:String, val ano:Int){
+    open fun acelerar() = "Veículo acelerando..."
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+
+
+class Carro (val cor:String, x:String, y:Int):Veiculo(x, y){
+
+    override fun acelerar() = "Carro acelerando"
+    override fun toString(): String {
+        return "Carro(cor='$cor', modelo='$modelo', ano='$ano')"
+    }
+
+
+}
+
+fun main() {
+    var c1:Carro
+    c1 = Carro("Corsa", "Preto", 1999)
+    println(c1)
+    println(c1.modelo)
 }
